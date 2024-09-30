@@ -1,5 +1,6 @@
 import { useTheme } from "@emotion/react";
 import { useMediaQuery, Box, styled } from "@mui/material";
+import { AboutMePic } from "../assets/AboutMePhoto.jpg";
 
 const About = () => {
   const theme = useTheme();
@@ -35,9 +36,7 @@ const About = () => {
     <Box sx={{ background: `${theme.palette.secondary.main}` }} id="about">
       <AboutSection padding="5rem 8% 3rem">
         <Box className="heading">
-          <img
-            src={`${import.meta.env.BASE_URL}src/assets/about-me-photo.jpg`}
-          />
+          <img src={AboutMePic} />
           About Me
         </Box>
         <Box>
