@@ -1,6 +1,6 @@
 import { useTheme } from "@emotion/react";
 import { useMediaQuery, Box, styled } from "@mui/material";
-import { AboutMePic } from "../assets/AboutMePhoto.jpg";
+import AboutMePic from "../assets/AboutMePhoto.jpg";
 
 const About = () => {
   const theme = useTheme();
