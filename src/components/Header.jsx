@@ -13,7 +13,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@emotion/react";
 import { ColorModeContext } from "../theme";
-import { Link } from "react-router-dom";
 
 // Styled Components
 const NavBar = styled(Box)(({ theme }) => ({
@@ -89,11 +88,11 @@ const Header = () => {
   const colorMode = useContext(ColorModeContext);
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const navItems = [
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Profile", path: "/profile" },
-    { label: "Projects", path: "/projects" },
-    { label: "Contact", path: "/contact" },
+    { label: "Home", path: "#home" },
+    { label: "About", path: "#about" },
+    { label: "Profile", path: "#profile" },
+    { label: "Projects", path: "#projects" },
+    { label: "Contact", path: "#contact" },
   ];
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
@@ -111,14 +110,14 @@ const Header = () => {
     >
       <NavMenuSmallScreen>
         {navItems.map((item, index) => (
-          <Link
+          <a
             key={index}
-            to={item.path}
+            href={item.path}
             style={{ textDecoration: "none" }}
             onClick={() => setDrawerOpen(false)}
           >
             <NavItemSmallScreen>{item.label}</NavItemSmallScreen>
-          </Link>
+          </a>
         ))}
       </NavMenuSmallScreen>
       <SwitchModeBox onClick={colorMode.toggleColorMode}>
@@ -169,13 +168,13 @@ const Header = () => {
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <NavMenuLargeScreen>
             {navItems.map((item, index) => (
-              <Link
+              <a
                 key={index}
-                to={item.path}
+                href={item.path}
                 style={{ textDecoration: "none" }}
               >
                 <NavItemLargeScreen>{item.label}</NavItemLargeScreen>
-              </Link>
+              </a>
             ))}
           </NavMenuLargeScreen>
           <IconButton

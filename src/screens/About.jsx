@@ -35,7 +35,9 @@ const About = () => {
     <Box sx={{ background: `${theme.palette.secondary.main}` }} id="about">
       <AboutSection padding="5rem 8% 3rem">
         <Box className="heading">
-          <img src="src/assets/about-me-photo.jpg" />
+          <img
+            src={`${import.meta.env.BASE_URL}/src/assets/about-me-photo.jpg`}
+          />
           About Me
         </Box>
         <Box>
