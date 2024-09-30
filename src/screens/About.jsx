@@ -36,7 +36,7 @@ const About = () => {
       <AboutSection padding="5rem 8% 3rem">
         <Box className="heading">
           <img
-            src={`${import.meta.env.BASE_URL}/src/assets/about-me-photo.jpg`}
+            src={`${import.meta.env.BASE_URL}src/assets/about-me-photo.jpg`}
           />
           About Me
         </Box>

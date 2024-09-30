@@ -1,6 +1,8 @@
 import { useTheme } from "@emotion/react";
 import { Box, styled, useMediaQuery } from "@mui/material";
 import StyledButton from "../components/StyledButton";
+import MyPhotoLightMode from "../assets/MyPhotoLightMode.png";
+import MyPhoto from "../assets/MyPhoto.jpg";
 
 const Introduction = () => {
   const theme = useTheme();
@@ -110,11 +112,9 @@ const Introduction = () => {
         <HomeImage>
           <img
             src={
-              theme.palette.mode === "dark"
-                ? `${import.meta.env.BASE_URL}/src/assets/MyPhoto.jpg`
-                : `${
-                    import.meta.env.BASE_URL
-                  }/src/assets/MyPhoto-light-mode.png`
+              theme.palette.mode === "light"
+                ? { MyPhotoLightMode }
+                : { MyPhoto }
             }
             alt="My Photo"
           />
