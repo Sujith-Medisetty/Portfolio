@@ -13,6 +13,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@emotion/react";
 import { ColorModeContext } from "../theme";
+import { navItems } from "../MyDetails";
+import HomeIcon from "@mui/icons-material/Home";
 
 // Styled Components
 const NavBar = styled(Box)(({ theme }) => ({
@@ -87,13 +89,6 @@ const Header = () => {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const navItems = [
-    { label: "Home", path: "#home" },
-    { label: "About", path: "#about" },
-    { label: "Profile", path: "#profile" },
-    { label: "Projects", path: "#projects" },
-    { label: "Contact", path: "#contact" },
-  ];
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   // Drawer List for small screens

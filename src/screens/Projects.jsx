@@ -4,42 +4,10 @@ import StyledButton from "../components/StyledButton";
 import CodeIcon from "@mui/icons-material/Code";
 import { useState } from "react";
 import StyledDialog from "../components/StyledDialog";
+import { projects, ProjectContentBoxDescSize } from "../MyDetails";
 
 const Projects = () => {
   const theme = useTheme();
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const projects = [
-    {
-      title: "Restaurent Management System",
-      desc: "Developed a comprehensive Restaurant Management System consisting of Customer, Admin, Kitchen Master, and Supervisor modules. Customers can seamlessly browse, customize, and place orders via an intuitive interface while Admins possess full control over menu items, staff, and supervisors. Chefs adeptly fulfill orders, and Supervisors handle inquiries",
-      techStack: ["Angular 10", "Spring Boot", "Hibernate 5.3", "Log4J"],
-      url: "https://github.com/Sujith-Medisetty/Restaurant-Management-System",
-    },
-    {
-      title: "Information-Security-Management-System",
-      desc: "A foundational web application prioritizing security to thwart potential breaches. Employed AES encryption for secure resource storage, and encoded passwords and keys in the database. Only authorized personnel can access portals. Implemented CAPTCHA for DoS attack prevention, fortified against SQL injections with parameterized queries and JPA. Incorporated notification functionality for private communication. The site operates over HTTPS using a self-signed and trusted certificate. Committed to a secure user experience.",
-      techStack: ["Angular", "Spring Boot", "Hibernate", "Spring Security"],
-      url: "https://github.com/Sujith-Medisetty/ISMS",
-    },
-    {
-      title: "Self-Portfolio",
-      desc: "Explore my professional journey, including a detailed Profile, accomplished Projects, and background About me",
-      techStack: ["React JS", "Material UI"],
-      url: "",
-    },
-    {
-      title: "Weather Tracker",
-      desc: "Reports Current Weather Condition by accessing Geo Location , provides 7-day forecast information and hourly forecast for next 24 hours. (This application works on both Android and IOS)",
-      techStack: ["Flutter", "SQ-Lite"],
-      url: "https://github.com/Sujith-Medisetty/Weather_App",
-    },
-    {
-      title: "Retail Management System",
-      desc: "This application maintains the statistics of Teller and helps supervisors to monitor their performance.",
-      techStack: ["Spring Boot", "MY-SQL Database", "Bootstrap & JS"],
-      url: "https://github.com/Sujith-Medisetty/Spring-RMS-1",
-    },
-  ];
 
   const ProjectSection = styled(Box)(({ theme }) => ({
     "& .heading": {
@@ -103,7 +71,6 @@ const Projects = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [dialogContent, setDialogContent] = useState("");
   const [dialogTitle, setDialogTitle] = useState("");
-  const ContentBoxDescSize = 20;
 
   const handleClose = () => {
     setDialogContent("");
@@ -129,10 +96,10 @@ const Projects = () => {
                 <CodeIcon sx={{ fontSize: "3rem" }} />
                 <Box className="title">{project.title}</Box>
                 <Box className="desc">
-                  {words.length > ContentBoxDescSize
-                    ? `${words.slice(0, ContentBoxDescSize).join(" ")}`
+                  {words.length > ProjectContentBoxDescSize
+                    ? `${words.slice(0, ProjectContentBoxDescSize).join(" ")}`
                     : project.desc}
-                  {words.length > ContentBoxDescSize ? (
+                  {words.length > ProjectContentBoxDescSize ? (
                     <span
                       className="showMore"
                       onClick={() =>

@@ -2,11 +2,9 @@ import { Box, styled } from "@mui/material";
 import StyledButton from "../components/StyledButton";
 import MarkunreadIcon from "@mui/icons-material/Markunread";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { myEmail, phone } from "../MyDetails";
 
 const Contact = () => {
-  const myEmail = "sujithmedisetty012@gmail.com";
-  const phone = "+1 (901)-264-7157";
-
   const ContactSection = styled(Box)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",

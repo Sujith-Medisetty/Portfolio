@@ -3,21 +3,16 @@ import { Box, styled, useMediaQuery } from "@mui/material";
 import StyledButton from "../components/StyledButton";
 import MyPhotoLightMode from "../assets/MyPhotoLightMode.png";
 import MyPhoto from "../assets/MyPhoto.jpg";
+import {
+  IntroProfessionalDetails,
+  MyName,
+  MyRole,
+  IntroDesc,
+} from "../MyDetails";
 
 const Introduction = () => {
   const theme = useTheme();
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-
-  const buttonLinks = [
-    {
-      text: "Linked-In",
-      href: "https://www.linkedin.com/in/sujith-medisetty-40965a1b4/",
-    },
-    {
-      text: "Download CV",
-      href: "Resume.pdf",
-    },
-  ];
 
   const Home = styled(Box)(({ theme }) => ({
     display: "flex",
@@ -88,21 +83,13 @@ const Introduction = () => {
       <Home>
         <HomeContent>
           <h3>Hello, It's Me</h3>
-          <h1>Sujith Medisetty</h1>
+          <h1>{MyName}</h1>
           <h3>
-            And I'm a <span>Full-Stack Developer</span>
+            And I'm a <span>{MyRole}</span>
           </h3>
-          <p>
-            I am a full-stack developer with 1+ years of experience in building
-            and delivering web applications at Amadeus Software Labs. I am
-            proficient in Python, Java and worked on frameworks like SpringBoot
-            and Angular. I have a strong understanding of both the frontend and
-            backend technologies. I am a highly motivated and self-directed
-            individual. I am also a team player and I am able to work
-            effectively with others to achieve common goals.
-          </p>
+          <p>{IntroDesc}</p>
           <ProfessionalDetails>
-            {buttonLinks.map((buttonLink, index) => (
+            {IntroProfessionalDetails.map((buttonLink, index) => (
               <StyledButton key={index} href={buttonLink.href}>
                 {buttonLink.text}
               </StyledButton>

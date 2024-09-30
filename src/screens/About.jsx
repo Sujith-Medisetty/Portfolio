@@ -1,10 +1,10 @@
 import { useTheme } from "@emotion/react";
 import { useMediaQuery, Box, styled } from "@mui/material";
 import AboutMePic from "../assets/AboutMePhoto.jpg";
+import { AboutDesc, MyRole } from "../MyDetails";
 
 const About = () => {
   const theme = useTheme();
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const AboutSection = styled(Box)(({ theme }) => ({
     display: "flex",
@@ -40,17 +40,8 @@ const About = () => {
           About Me
         </Box>
         <Box>
-          <h3>Full-Stack Developer</h3>
-          <p>
-            Worked as a SDE At Amadeus Software Labs, I worked in the Airlines
-            Checking In department, specifically in the IATCI (Interline Airline
-            Through Check-in) department. I worked on bug fixes in the code,
-            developed a tool related to airlines feeds, and took care of the
-            entire process from bug fix to delivery to the client. I used
-            frameworks such as Angular and Spring Boot, and I have a strong
-            understanding of both frontend and backend technologies. This
-            experience gave me valuable exposure to real-world applications
-          </p>
+          <h3>{MyRole}</h3>
+          <p>{AboutDesc}</p>
         </Box>
       </AboutSection>
     </Box>
