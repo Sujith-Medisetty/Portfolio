@@ -111,11 +111,7 @@ const Introduction = () => {
         </HomeContent>
         <HomeImage>
           <img
-            src={
-              theme.palette.mode === "light"
-                ? { MyPhotoLightMode }
-                : { MyPhoto }
-            }
+            src={theme.palette.mode === "light" ? MyPhotoLightMode : MyPhoto}
             alt="My Photo"
           />
         </HomeImage>

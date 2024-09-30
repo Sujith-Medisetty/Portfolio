@@ -27,3 +27,10 @@ const App = () => {
 };
 
 export default App;
+
+// steps followed to deploy (Note)
+// first step is to install npm install gh-pages --save-dev
+// 1. in vite.config.js file added "  base: "/portfolio/"
+// 2. in package.json added  -> "predeploy": "npm run build", ->"deploy": "gh-pages -d dist"
+// 3. npm run deploy
+// make sure to add your git remote set-url origin https://github.com/Sujith-Medisetty/portfolio.git beofe the above deploy command...
